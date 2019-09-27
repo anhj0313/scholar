@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emp">
- <select id="empall" resultType="emp">
+<!--  <select id="empall" resultType="emp">
  	select * from employees
  </select>
  
@@ -87,6 +87,10 @@
  <select id="empwithresultmap" resultMap="empmap" >
  select first_name ||','|| last_name as fullname, phone_number 
  from employees where employee_id=100
+ </select> -->
+ 
+ <select id="tuition" resultType="emp">
+ select * from tuition
  </select>
  
  <resultMap type="emp" id="empmap">

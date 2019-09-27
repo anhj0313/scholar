@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class EmpDAO {
+	@Autowired
 	SqlSession session;
-		
-	public void setSession(SqlSession session) {
-		this.session = session;
-	}
 
 	public List<EmpVO> getEmpList() {
 		List<EmpVO> list = session.selectList("emp.empall");
@@ -69,5 +69,9 @@ public class EmpDAO {
 	
 	public EmpVO getEmpWithResultMap() {
 		return session.selectOne("emp.empwithresultmap");
+	}
+	
+	public List<EmpVO> getTuition() {
+		return session.selectList("emp.tuition");
 	}
 }

@@ -8,34 +8,34 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class EmpMain {
 	public static void main(String[] args) throws Exception{
-		SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-		SqlSessionFactory factory = builder.build(
-				Resources.getResourceAsReader("edu/kitri/mybatis/db-config.xml")
-				);
 		
-		SqlSession session = factory.openSession(true); //auto commit = true
+		ApplicationContext factory = new ClassPathXmlApplicationContext("kitri/main/myapp/mybatis_spring.xml");
 		
-		System.out.println(session.getConnection());
+		EmpService service = factory.getBean("service", EmpService.class);
 		
-		EmpDAO dao = new EmpDAO();
-		dao.setSession(session);
 		
-		EmpService service = new EmpServiceImpl();
-		((EmpServiceImpl)service).setDAO(dao);
+			service.getTuition(); System.out.println("@@@");
+		 
 		
-		List<EmpVO> list = service.getEmpList();
-		for(EmpVO vo : list) {
-			System.out.println(vo.employee_id + ":" + vo.getFirst_name());
-		}
+		//EmpDAO dao = new EmpDAO(); ->@Repository
+		//dao.setSession(session); ->@Autowired
 		
-		EmpVO vo = service.getEmpOne(100);
-		System.out.println(vo);
+		//EmpService service = new EmpServiceImpl(); ->@Service("service")
+		//((EmpServiceImpl)service).setDAO(dao);
 		
-		List<EmpVO> vo2 = service.getEmpName("William");
-		System.out.println(vo2);
+		/*
+		 * List<EmpVO> list = service.getEmpList(); for(EmpVO vo : list) {
+		 * System.out.println(vo.employee_id + ":" + vo.getFirst_name()); }
+		 * 
+		 * EmpVO vo = service.getEmpOne(100); System.out.println(vo);
+		 * 
+		 * List<EmpVO> vo2 = service.getEmpName("William"); System.out.println(vo2);
+		 */
 		
 		//insert test
 		/*
@@ -100,7 +100,10 @@ public class EmpMain {
 		service.updateEmpWithMap(map);
 		System.out.println("update complete");*/
 		
-		EmpVO resultmapvo = service.getEmpWithResultMap();
-		System.out.println(resultmapvo.getLast_name() + ":" + resultmapvo.getPhone());
+		/*
+		 * EmpVO resultmapvo = service.getEmpWithResultMap();
+		 * System.out.println(resultmapvo.getLast_name() + ":" +
+		 * resultmapvo.getPhone());
+		 */
 	}
 }
