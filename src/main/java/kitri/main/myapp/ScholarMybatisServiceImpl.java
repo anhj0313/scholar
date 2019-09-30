@@ -17,6 +17,11 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	@Autowired
 	RegisterAdminDAO radao;
 	
+	
+	@Autowired
+	ExtraAdminDAO edao;
+	
+	
 	@Override
 	public List<CalendarVO> getCalendarAll() {
 		return dao.getCalendarAll();
@@ -73,6 +78,30 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	public UserInfoVO changePw(String user_id, String password) {
 		UserInfoVO uvo=udao.changePw(user_id, password);
 		return uvo;
+	}
+
+	@Override
+	public List<ExtraAdminVO> getMyRequestExtra(String user_id) {
+		
+		return edao.getMyRequestExtra(user_id);
+	}
+
+	@Override
+	public List<ExtraAdminVO> getAllRequestExtra() {
+
+		return edao.getAllRequestExtra();
+	}
+
+	@Override
+	public void insertExtraAdmin(ExtraAdminVO vo) {
+		edao.insertAdminExtra(vo);
+		
+	}
+
+	@Override
+	public void deleteRequestExtra(ExtraAdminVO vo) {
+	edao.deleteRequestExtra(vo);;
+		
 	}
 	
 }

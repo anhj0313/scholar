@@ -27,5 +27,21 @@
 
 </form>
   
+  <form action="insertrequest">
+
+
+<input type="hidden" name="user_id" value=${user.user_id }>
+<input type="submit" value="학적변동">
+
+</form>
+
+  <form action="insertrequestextra">
+
+
+<input type="hidden" name="user_id" value=${user.user_id }>
+<input type="submit" value="전과,복수전공 신청">
+
+</form>
+  
 </body>
 </html>

@@ -10,6 +10,8 @@
 		<typeAlias type="kitri.main.myapp.CalendarVO" alias="cal"/>
 		<typeAlias type="kitri.main.myapp.UserInfoVO" alias="user"/>
 		<typeAlias type="kitri.main.myapp.RegisterAdminVO" alias="request"/>
+		<typeAlias type="kitri.main.myapp.ExtraAdminVO" alias="extrarequest"/>
+		
 	</typeAliases>
 
 </configuration>

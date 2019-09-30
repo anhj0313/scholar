@@ -50,6 +50,35 @@
 		#{reportingdate}
 	</delete>
 
+	<!-- 전과신청 -->
+	<update id="updateuserextra" parameterType="user">
+		update user_info
+		set
+		extra_major = #{extra_major}
+		where user_id = #{user_id}
+	</update>
+
+	<insert id="insertrequestextra" parameterType="extrarequest">
+		insert into
+		extra_major_admin values(#{user_id}, #{extra_major}, sysdate,
+		, #{memo})
+	</insert>
+
+	<select id="allrequestextra" resultType="extrarequest">
+		select * from extra_major_admin
+	</select>
+
+	<select id="myrequestextra" parameterType="String"
+		resultType="request">
+		select * from extra_major_admin where user_id = #{user_id}
+	</select>
+
+	<delete id="deleterequestextra" parameterType="extrarequest">
+		delete
+		from extra_major_admin 
+		where user_id = #{user_id} and reportingdate =
+		#{reportingdate}
+	</delete>
 
 
 
