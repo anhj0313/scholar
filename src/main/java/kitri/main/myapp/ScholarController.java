@@ -19,8 +19,8 @@ public class ScholarController {
 	ScholarMybatisService service;
 
 	ArrayList<CalendarVO> list = new ArrayList<CalendarVO>();
-
 	
+
 	@RequestMapping(value = "/calendarlist")
 	ModelAndView getCalendarList() {
 		List<CalendarVO> list = service.getCalendarAll();
@@ -31,17 +31,4 @@ public class ScholarController {
 
 		return mv;
 	}
-
-	@RequestMapping("/userlist")
-	   public ModelAndView getUserinfoList() {
-		   List<UserinfoVO> userlist = service.getUserinfoList();
-		   ModelAndView mv = new ModelAndView();
-		   mv.setViewName("/user_infoview");
-		   mv.addObject("userlist", userlist);
-
-		   
-		   
-		   return mv;
-
-	   }
 }

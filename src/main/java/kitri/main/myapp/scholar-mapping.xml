@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cal">	
-	<select id="calendarall" resultType="cal">		
+<mapper namespace="sch">
+
+
+	<select id="calendarall" resultType="cal">
 		select * from calendar
 	</select>
-	<select id="userall" resultType="user">
-		select * from user_info
+	<select id="user" resultType="user" parameterType="user">
+		select * from
+		user_info where user_id=#{user_id} and password=#{password}
 	</select>
+
+	<!-- user 비밀번호 업데이트 -->
+	<update id="changePw" parameterType="user">
+		update user_info set password = #{password} where user_id = #{user_id}
+	</update>
+
+
+
+
+	<!-- 학적변경 -->
+	<update id="updateuser" parameterType="user">
+		update user_info
+		set
+		student_register = #{student_register}
+		where user_id = #{user_id}
+	</update>
+
+	<insert id="insertrequest" parameterType="request">
+		insert into
+		register_admin values(#{user_id}, #{student_register}, sysdate,
+		#{semester}, #{memo})
+	</insert>
+
+	<select id="allrequest" resultType="request">
+		select * from register_admin
+	</select>
+
+	<select id="myrequest" parameterType="String"
+		resultType="request">
+		select * from register_admin where user_id = #{user_id}
+	</select>
+
+	<delete id="deleterequest" parameterType="request">
+		delete
+		from register_admin
+		where user_id = #{user_id} and reportingdate =
+		#{reportingdate}
+	</delete>
+
+
+
+
 </mapper>
 
 

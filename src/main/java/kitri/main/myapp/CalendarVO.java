@@ -1,5 +1,5 @@
 package kitri.main.myapp;
-
+// 14010864
 public class CalendarVO {
 	private String cal_date;
 	private String cal_content;

@@ -1,6 +1,6 @@
 package kitri.main.myapp;
 
-public class UserinfoVO {
+public class UserInfoVO {
 
 	String user_id;
 	String name;
@@ -72,14 +72,11 @@ public class UserinfoVO {
 	public void setUser_code(int user_code) {
 		this.user_code = user_code;
 	}
+	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return user_id+": "+name;
+		return "UserinfoVO [user_id=" + user_id + ", name=" + name + ", major=" + major + ", semester=" + semester
+				+ ", student_register=" + student_register + ", address=" + address + ", phone=" + phone + ", password="
+				+ password + ", extra_major=" + extra_major + ", user_code=" + user_code + "]";
 	}
-	
-	
-	
-	
-	
 }

@@ -14,6 +14,6 @@ public class ScholarMybatisDAO {
 	SqlSession session;	// mybatis dbconnetion
 	
 	public List<CalendarVO> getCalendarAll() {
-		return session.selectList("cal.calendarall");
+		return session.selectList("sch.calendarall");
 	}
 }
