@@ -11,9 +11,24 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	@Autowired
 	ScholarMybatisDAO dao;
 
+	@Autowired
+	UserinfoDAO udao;
+	
 	@Override
 	public List<CalendarVO> getCalendarAll() {
 		return dao.getCalendarAll();
 	}
+
+	public void setDAO(UserinfoDAO udao) {
+		this.udao = udao;
+		}
+
+	@Override
+	public List<UserinfoVO> getUserinfoList() {
+		List<UserinfoVO> list = udao.getUserinfoList();
+		return list;
+
+	}
+	
 	
 }

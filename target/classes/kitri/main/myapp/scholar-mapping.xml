@@ -4,9 +4,11 @@
 <mapper namespace="cal">	
 	<select id="calendarall" resultType="cal">		
 		select * from calendar
-	</select>	
+	</select>
+	<select id="userall" resultType="user">
+		select * from user_info
+	</select>
 </mapper>
-
 
 
 

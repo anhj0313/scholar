@@ -8,6 +8,7 @@
 	<!-- edu.kitri.mybatis.EmpVO: SQL결과 데이터 저장 VO 별명 지정: cal -->
 	<typeAliases>
 		<typeAlias type="kitri.main.myapp.CalendarVO" alias="cal"/>
+		<typeAlias type="kitri.main.myapp.UserinfoVO" alias="user"/>
 	</typeAliases>
 
 </configuration>

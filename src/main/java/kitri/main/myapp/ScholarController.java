@@ -31,4 +31,17 @@ public class ScholarController {
 
 		return mv;
 	}
+
+	@RequestMapping("/userlist")
+	   public ModelAndView getUserinfoList() {
+		   List<UserinfoVO> userlist = service.getUserinfoList();
+		   ModelAndView mv = new ModelAndView();
+		   mv.setViewName("/user_infoview");
+		   mv.addObject("userlist", userlist);
+
+		   
+		   
+		   return mv;
+
+	   }
 }
