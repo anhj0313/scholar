@@ -50,18 +50,31 @@
 		#{reportingdate}
 	</delete>
 
-	<!-- 전과신청 -->
+	<!-- 전과, 복수전공신청 -->
 	<update id="updateuserextra" parameterType="user">
 		update user_info
 		set
 		extra_major = #{extra_major}
 		where user_id = #{user_id}
 	</update>
-
+	
+	<update id="updateusermajor" parameterType="user">
+		update user_info
+		set
+		major= #{major}
+		where user_id = #{user_id}
+	</update>
+	
+	<update id="updateaccept" parameterType="extrarequest">
+		update extra_major_admin
+		set 
+		accept=0
+		where user_id = #{user_id} and request_id=#{request_id}
+	</update>
 	<insert id="insertrequestextra" parameterType="extrarequest">
 		insert into
 		extra_major_admin values(#{user_id}, #{extra_major}, sysdate,
-	   #{memo})
+	   #{memo},#{type},#{major},req_seq.nextval,#{accept})
 	</insert>
 
 	<select id="allrequestextra" resultType="extrarequest">
@@ -76,8 +89,8 @@
 	<delete id="deleterequestextra" parameterType="extrarequest">
 		delete
 		from extra_major_admin 
-		where user_id = #{user_id} and reportingdate =
-		#{reportingdate}
+		where user_id = #{user_id} and request_id =
+		#{request_id}
 	</delete>
 
 

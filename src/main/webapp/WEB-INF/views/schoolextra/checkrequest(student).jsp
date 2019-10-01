@@ -12,7 +12,7 @@
 	<h1> 신청 내역 </h1>
 	
 	<c:forEach items="${requestlistextra }" var="vo"> 
-		<form action="update">	${vo.user_id }, ${vo.extra_major }, ${vo.reportingdate },${vo.memo } </form>  
+		<form action="update">	${vo.user_id },${vo.major}, ${vo.extra_major }, ${vo.reportingdate },${vo.memo } </form>  
 	
 	</c:forEach>
 	

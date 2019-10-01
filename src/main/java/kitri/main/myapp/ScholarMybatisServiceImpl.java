@@ -103,5 +103,23 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	edao.deleteRequestExtra(vo);;
 		
 	}
+
+	@Override
+	public void updateuserextra(ExtraAdminVO vo) {
+		edao.updateuserextra(vo);
+		
+	}
+
+	@Override
+	public void updateusermajor(ExtraAdminVO vo) {
+	  
+		edao.updateusermajor(vo);
+	}
+
+	@Override
+	public void updateaccept(ExtraAdminVO vo) {
+		edao.updateaccept(vo);
+		
+	}
 	
 }

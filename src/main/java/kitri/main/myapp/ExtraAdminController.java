@@ -47,13 +47,12 @@ public class ExtraAdminController {
 	// 전과 신청 결과(데이터 추가)
 	@RequestMapping("/resultrequestextra")
 	public ModelAndView resultRequestExtra(ExtraAdminVO vo) {
-		
 		service.insertExtraAdmin(vo);
-		
-		
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("user_id", vo.getUser_id());
+
+	
 		mv.addObject("requestlistextra", service.getMyRequestExtra(vo.getUser_id()));
 		
 		mv.setViewName("schoolextra/checkrequest(student)");
@@ -73,4 +72,30 @@ public class ExtraAdminController {
 		return mv;
 	}
 	
+	@RequestMapping("/acceptextra")
+	public ModelAndView acceptRequestExtra(ExtraAdminVO vo) {
+		
+		ModelAndView mv = new ModelAndView();
+		
+
+	
+		if(vo.getType().contentEquals("major")) {
+			vo.setMajor(vo.getMajor());		
+			service.updateusermajor(vo);
+				}
+		else {
+			vo.setExtra_major(vo.getExtra_major());
+			service.updateuserextra(vo);
+			
+		}
+
+		service.updateaccept(vo);
+		
+		System.out.println("acceptupdate완료");
+		
+		mv.addObject("requestlistextra", service.getAllRequestExtra());
+		
+		mv.setViewName("schoolextra/checkrequest(admin)");
+		return mv;
+	} 
 }

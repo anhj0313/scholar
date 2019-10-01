@@ -19,5 +19,10 @@ public interface ScholarMybatisService {
 	public List<ExtraAdminVO> getAllRequestExtra();
 	public void insertExtraAdmin(ExtraAdminVO vo);
 	public void deleteRequestExtra(ExtraAdminVO vo);
+	public void updateuserextra(ExtraAdminVO vo);
+	public void updateusermajor(ExtraAdminVO vo);
+	public void updateaccept(ExtraAdminVO vo);
+	
+	
 }
 

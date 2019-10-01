@@ -6,8 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../jquery-3.2.1.min.js"></script>
+<script>
+ 	$(document).ready(function() {
+				
+			} 
+
+</script>
+
+
 </head>
-<body>
+
+<body  onload = "init(this.form);">
 
 	<h1>전과신청</h1>
 	<hr>
@@ -24,6 +34,7 @@
 			${vo } <input type="submit" value="취소">
 			<input type="hidden" name="user_id" value=${vo.user_id }>
 			<input type="hidden" name="reportingdate" value=${vo.reportingdate }>
+
 		</form>
 
 	</c:forEach>
@@ -32,10 +43,28 @@
 	
 	
 	<h1>신청 폼</h1>
-	<form action="resultrequestextra">
-		신청구분: <select name="extra_major">
-			<option>전공1</option>
-			<option>전공2</option>
+	<form name="form" action="resultrequestextra">
+	
+	신청구분: <select name="type" >
+		<option value="major">전과신청</option>
+		<option>부전공신청</option>
+		<option>복수전공신청</option>
+		</select>	
+	
+		전공선택: <select name="major">
+		<option value="">선택안함</option>
+		<option>컴퓨터공학과</option>
+		<option>정보통신 공학과</option>
+		<option>전자공학과</option>
+		</select>
+	
+        복수,부전공 선택: <select  name="extra_major">
+        <option value="">선택안함</option>
+		<option>컴퓨터공학과</option>
+		<option>정보통신공학과</option>
+		<option>전자공학과</option>
+			</select>
+	
 			
 		</select> 신청일시:
 		<textarea rows="1" cols="20" readonly="readonly">  </textarea>
@@ -43,6 +72,7 @@
 		<textarea rows="5" cols="20" name="memo" maxlength="100"></textarea>
 		<br> <input type="hidden" name="user_id"
 			value=${userinfo.user_id }> <input type="submit" value="신청">
+	<input type="hidden" name="accept" value=1>
 	</form>
 
 	<hr>
