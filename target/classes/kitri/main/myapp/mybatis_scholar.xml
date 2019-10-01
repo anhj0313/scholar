@@ -8,9 +8,12 @@
 	<!-- 1. 데이터 소스(데이터 연결 con) 설정 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> <!-- setDriverClassName -->
-		<property name="url" value="jdbc:oracle:thin:@192.168.30.111:1521:xe"/>
+	<!-- 	<property name="url" value="jdbc:oracle:thin:@192.168.30.111:1521:xe"/>
 		<property name="username" value="yujeong"/>
-		<property name="password" value="yujeong"/>
+		<property name="password" value="yujeong"/> -->
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="jdbc"/>
+		<property name="password" value="jdbc"/>
 	</bean>
 	
 	<!-- 2. SqlSessionFactory -->

@@ -8,6 +8,10 @@
 	<select id="userall" resultType="user">
 		select * from user_info
 	</select>
+	<select id="calendarmonth" resultType="cal" parameterType="String"> <!--config에서 설정  -->	
+		select * from calendar where substr(cal_date,4,2) = #{month}
+	</select>
+
 </mapper>
 
 

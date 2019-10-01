@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface ScholarMybatisService {
 	public List<CalendarVO> getCalendarAll();
-	public List<UserinfoVO> getUserinfoList();
+	public List<CalendarVO> getCalendarMonth(String month);
+	public List<UserinfoVO> getUserinfoList(); 
 }
 
