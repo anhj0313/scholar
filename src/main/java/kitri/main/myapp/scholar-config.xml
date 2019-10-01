@@ -11,6 +11,7 @@
 		<typeAlias type="kitri.main.myapp.UserInfoVO" alias="user"/>
 		<typeAlias type="kitri.main.myapp.RegisterAdminVO" alias="request"/>
 		<typeAlias type="kitri.main.myapp.ExtraAdminVO" alias="extrarequest"/>
+		<typeAlias type="kitri.main.myapp.LectureVO" alias="lecture"/>
 		
 	</typeAliases>
 

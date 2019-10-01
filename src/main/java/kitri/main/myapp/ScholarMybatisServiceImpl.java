@@ -21,6 +21,9 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	@Autowired
 	ExtraAdminDAO edao;
 	
+	@Autowired
+	LectureDAO ldao;
+	
 	
 	@Override
 	public List<CalendarVO> getCalendarAll() {
@@ -102,6 +105,11 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	public void deleteRequestExtra(ExtraAdminVO vo) {
 	edao.deleteRequestExtra(vo);;
 		
+	}
+
+	@Override
+	public List<LectureVO> getLectureTime() {
+		return ldao.getLectureTime();
 	}
 	
 }

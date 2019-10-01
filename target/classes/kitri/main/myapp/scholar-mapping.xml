@@ -80,6 +80,9 @@
 		#{reportingdate}
 	</delete>
 
+	<select id="getlecturetime" resultType="lecture">
+	select * from lecture
+	</select>
 
 
 </mapper>

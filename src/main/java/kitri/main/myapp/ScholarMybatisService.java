@@ -19,5 +19,7 @@ public interface ScholarMybatisService {
 	public List<ExtraAdminVO> getAllRequestExtra();
 	public void insertExtraAdmin(ExtraAdminVO vo);
 	public void deleteRequestExtra(ExtraAdminVO vo);
+	
+	public List<LectureVO> getLectureTime();
 }
 
