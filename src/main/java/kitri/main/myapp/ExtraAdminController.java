@@ -44,7 +44,7 @@ public class ExtraAdminController {
 		return mv;
 	}
 	
-	// 학적 변동 신청 결과(데이터 추가)
+	// 전과 신청 결과(데이터 추가)
 	@RequestMapping("/resultrequestextra")
 	public ModelAndView resultRequestExtra(ExtraAdminVO vo) {
 		
@@ -61,7 +61,7 @@ public class ExtraAdminController {
 		return mv;
 	}
 
-	// 학적 변동 신청 데이터 삭제
+	// 전과 신청 데이터 삭제
 	@RequestMapping(value="/deleterequestextra")
 	public ModelAndView deleteRequestExtra(ExtraAdminVO vo) {
 		

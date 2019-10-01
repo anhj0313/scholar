@@ -33,7 +33,7 @@
 	
 	<h1>신청 폼</h1>
 	<form action="resultrequestextra">
-		신청구분: <select name="student_register">
+		신청구분: <select name="extra_major">
 			<option>전공1</option>
 			<option>전공2</option>
 			
