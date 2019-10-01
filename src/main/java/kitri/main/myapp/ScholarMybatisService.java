@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface ScholarMybatisService {
 	public List<CalendarVO> getCalendarAll();
-	public List<UserInfoVO> getUserinfoList();
 	public void updateUserinfo(UserInfoVO vo);
 	public void insertRegisterAdmin(RegisterAdminVO vo);
 	public List<RegisterAdminVO> getAllRequest(); 
@@ -21,5 +20,7 @@ public interface ScholarMybatisService {
 	public void insertExtraAdmin(ExtraAdminVO vo);
 	public void deleteRequestExtra(ExtraAdminVO vo);
 	
+	public List<CalendarVO> getCalendarMonth(String month);
+	public List<UserInfoVO> getUserinfoList(); 
 }
 

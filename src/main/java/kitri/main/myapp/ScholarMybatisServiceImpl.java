@@ -106,6 +106,12 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService {
 	}
 
 
+	public List<CalendarVO> getCalendarMonth(String month) {
+		System.out.println("ServiceImpl에서의 month=" + month);
+		return dao.getCalendarMonth(month);
+	}
+	
+	
 	
 	
 
