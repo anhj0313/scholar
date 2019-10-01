@@ -6,7 +6,15 @@ public class RegisterAdminVO {
 	private String reportingdate;
 	private int semester;
 	private String memo;
+	private int request_id;
 	
+	
+	public int getRequest_id() {
+		return request_id;
+	}
+	public void setRequest_id(int request_id) {
+		this.request_id = request_id;
+	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -40,8 +48,9 @@ public class RegisterAdminVO {
 	@Override
 	public String toString() {
 		return "RegisterAdminVO [user_id=" + user_id + ", student_register=" + student_register + ", reportingdate="
-				+ reportingdate + ", semester=" + semester + ", memo=" + memo + "]";
+				+ reportingdate + ", semester=" + semester + ", memo=" + memo + ", request_id=" + request_id + "]";
 	}
+	
 	
 	
 }

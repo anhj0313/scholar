@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface ScholarMybatisService {
 	public List<CalendarVO> getCalendarAll();
-	public List<UserInfoVO> getUserinfoList();
 	public void updateUserinfo(UserInfoVO vo);
 	public void insertRegisterAdmin(RegisterAdminVO vo);
 	public List<RegisterAdminVO> getAllRequest(); 
@@ -13,6 +12,7 @@ public interface ScholarMybatisService {
 	public void deleteRequest(RegisterAdminVO vo);
 	
 
+	public UserInfoVO getUser(String user_id);
 	public UserInfoVO getUser(String user_id, String password);
 	public UserInfoVO changePw(String user_id, String password);
 	public List<ExtraAdminVO> getMyRequestExtra(String user_id);
@@ -20,6 +20,10 @@ public interface ScholarMybatisService {
 	public void insertExtraAdmin(ExtraAdminVO vo);
 	public void deleteRequestExtra(ExtraAdminVO vo);
 	
+
 	public List<LectureVO> getLectureTime();
+
+	public List<CalendarVO> getCalendarMonth(String month);
+	public List<UserInfoVO> getUserinfoList(); 
 }
 

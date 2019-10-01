@@ -7,24 +7,23 @@ import org.springframework.stereotype.Service;
 
 // service = new EmpServiceImpl()
 @Service("service")
-public class ScholarMybatisServiceImpl implements ScholarMybatisService{
+public class ScholarMybatisServiceImpl implements ScholarMybatisService {
 	@Autowired
 	ScholarMybatisDAO dao;
 
 	@Autowired
 	UserInfoDAO udao;
-	
+
 	@Autowired
 	RegisterAdminDAO radao;
-	
-	
+
 	@Autowired
 	ExtraAdminDAO edao;
+
 	
 	@Autowired
 	LectureDAO ldao;
-	
-	
+
 	@Override
 	public List<CalendarVO> getCalendarAll() {
 		return dao.getCalendarAll();
@@ -32,7 +31,7 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 
 	public void setDAO(UserInfoDAO udao) {
 		this.udao = udao;
-		}
+	}
 
 	@Override
 	public List<UserInfoVO> getUserinfoList() {
@@ -70,46 +69,59 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService{
 	public void deleteRequest(RegisterAdminVO vo) {
 		radao.deleteRequest(vo);
 	}
+
+	@Override
+	public UserInfoVO getUser(String user_id) {
+		return udao.getUser(user_id);
+	}
 	
 	@Override
 	public UserInfoVO getUser(String user_id, String password) {
-		UserInfoVO uvo=udao.getUser(user_id, password);
+		UserInfoVO uvo = udao.getUser(user_id, password);
 		return uvo;
 	}
 
+
 	@Override
 	public UserInfoVO changePw(String user_id, String password) {
-		UserInfoVO uvo=udao.changePw(user_id, password);
+		UserInfoVO uvo = udao.changePw(user_id, password);
 		return uvo;
 	}
 
 	@Override
 	public List<ExtraAdminVO> getMyRequestExtra(String user_id) {
-		
 		return edao.getMyRequestExtra(user_id);
 	}
 
 	@Override
 	public List<ExtraAdminVO> getAllRequestExtra() {
-
 		return edao.getAllRequestExtra();
 	}
 
 	@Override
 	public void insertExtraAdmin(ExtraAdminVO vo) {
 		edao.insertAdminExtra(vo);
-		
 	}
 
 	@Override
 	public void deleteRequestExtra(ExtraAdminVO vo) {
-	edao.deleteRequestExtra(vo);;
-		
+		edao.deleteRequestExtra(vo);
 	}
+
 
 	@Override
 	public List<LectureVO> getLectureTime() {
 		return ldao.getLectureTime();
 	}
+
+
+	public List<CalendarVO> getCalendarMonth(String month) {
+		System.out.println("ServiceImpl에서의 month=" + month);
+		return dao.getCalendarMonth(month);
+	}
 	
+	
+
+	
+
 }

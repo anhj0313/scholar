@@ -61,7 +61,7 @@ public class RegisterAdminController {
 		return mv;
 	}
 
-	// 학적 변동 신청 데이터 삭제
+	// 학적 변동 신청 데이터 삭제(취소)
 	@RequestMapping(value="/deleterequest")
 	public ModelAndView deleteRequest(RegisterAdminVO vo) {
 		
@@ -69,8 +69,31 @@ public class RegisterAdminController {
 		
 		service.deleteRequest(vo);
 		
+		UserInfoVO user = service.getUser(vo.getUser_id());
+
+
+		mv.addObject("userinfo", user);
+		mv.addObject("requestlist", service.getMyRequest(vo.getUser_id()));
 		mv.setViewName("schoolregister/insertrequest(student)");
 		return mv;
+	}
+	
+	// 학적 변경
+	@RequestMapping("/acceptrequest")
+	public ModelAndView acceptRequest(String user_id, String student_register, int request_id) {
+		ModelAndView mv = new ModelAndView();
+		
+		UserInfoVO user = service.getUser(user_id);
+		user.setStudent_register(student_register);
+		service.updateUserinfo(user);
+		RegisterAdminVO dvo = new RegisterAdminVO();
+		dvo.setUser_id(user_id);
+		dvo.setRequest_id(request_id);
+		service.deleteRequest(dvo);
+		mv.addObject("requestlist", service.getAllRequest());
+		mv.setViewName("schoolregister/checkrequest(admin)");
+		return mv;
+		
 	}
 	
 }

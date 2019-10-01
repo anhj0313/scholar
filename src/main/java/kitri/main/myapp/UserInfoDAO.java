@@ -25,6 +25,10 @@ public class UserInfoDAO {
 		return session.selectOne("sch.user", user);
 	}
 
+	public UserInfoVO getUser(String user_id) {
+		return session.selectOne("sch.userwithoutpw", user_id);
+	}
+	
 	public UserInfoVO getUser(String user_id, String password) {
 		UserInfoVO info = new UserInfoVO();
 		info.setUser_id(user_id);

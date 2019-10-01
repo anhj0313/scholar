@@ -23,7 +23,7 @@
 		<form action="deleterequest">
 			${vo } <input type="submit" value="취소">
 			<input type="hidden" name="user_id" value=${vo.user_id }>
-			<input type="hidden" name="reportingdate" value=${vo.reportingdate }>
+			<input type="hidden" name="request_id" value=${vo.request_id }>
 		</form>
 
 	</c:forEach>
