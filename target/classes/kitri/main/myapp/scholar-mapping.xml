@@ -7,6 +7,12 @@
 	<select id="calendarall" resultType="cal">
 		select * from calendar
 	</select>
+	
+	<select id="userwithoutpw" resultType="user" parameterType="String">
+		select * from
+		user_info where user_id=#{user_id}
+	</select>
+	
 	<select id="user" resultType="user" parameterType="user">
 		select * from
 		user_info where user_id=#{user_id} and password=#{password}
@@ -30,8 +36,7 @@
 
 	<insert id="insertrequest" parameterType="request">
 		insert into
-		register_admin values(#{user_id}, #{student_register}, sysdate,
-		#{semester}, #{memo})
+		register_admin values(#{user_id}, #{student_register}, sysdate, #{semester}, #{memo}, seq_request.nextval)
 	</insert>
 
 	<select id="allrequest" resultType="request">
@@ -46,8 +51,7 @@
 	<delete id="deleterequest" parameterType="request">
 		delete
 		from register_admin
-		where user_id = #{user_id} and reportingdate =
-		#{reportingdate}
+		where user_id = #{user_id} and request_id = #{request_id}
 	</delete>
 
 	<!-- 전과신청 -->
@@ -76,11 +80,13 @@
 	<delete id="deleterequestextra" parameterType="extrarequest">
 		delete
 		from extra_major_admin 
-		where user_id = #{user_id} and reportingdate =
-		#{reportingdate}
+		where user_id = #{user_id} and reportingdate =#{reportingdate}
 	</delete>
 
-
+	<select id="getlecturetime" resultType="String">
+	 	select lecture_time
+	 	from lecture
+	</select>
 
 </mapper>
 

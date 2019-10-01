@@ -13,11 +13,13 @@ public interface ScholarMybatisService {
 	public void deleteRequest(RegisterAdminVO vo);
 	
 
+	public UserInfoVO getUser(String user_id);
 	public UserInfoVO getUser(String user_id, String password);
 	public UserInfoVO changePw(String user_id, String password);
 	public List<ExtraAdminVO> getMyRequestExtra(String user_id);
 	public List<ExtraAdminVO> getAllRequestExtra();
 	public void insertExtraAdmin(ExtraAdminVO vo);
 	public void deleteRequestExtra(ExtraAdminVO vo);
+	
 }
 
