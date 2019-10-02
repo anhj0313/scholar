@@ -13,6 +13,8 @@ public class LectureController {
 	@Autowired
 	ScholarMybatisService service;
 	
+
+	
 	@RequestMapping("/lecture")
 	public ModelAndView getLectureTime() {
 		ModelAndView mv = new ModelAndView();
@@ -31,8 +33,15 @@ public class LectureController {
 		mv.addObject("lecture", list);
 		mv.setViewName("lecture/lectureTime");
 		
-		return mv;
+		return mv;		
+	}
+	
+	@RequestMapping("/register")
+	public ModelAndView register() {
+		ModelAndView mv = new ModelAndView();
 		
+		mv.setViewName("lecture/register");
+		return mv;
 	}
 	
 	public static boolean isStringDouble(String s) {
