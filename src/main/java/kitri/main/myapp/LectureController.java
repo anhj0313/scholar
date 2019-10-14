@@ -17,12 +17,13 @@ public class LectureController {
 
 	
 	@RequestMapping("/lecture")
-	public ModelAndView getLectureTime(@RequestParam(value="major", required=false, defaultValue="") String major,
-			@RequestParam(value="type", required=false, defaultValue="") String type,
+	public ModelAndView getLectureTime(
 			@RequestParam(value="search", required=false, defaultValue="") String search) {
 		
+		String search2 = "%"+search+"%";
+		
 		ModelAndView mv = new ModelAndView();
-		List<LectureVO> list = service.getLectureTime(search);
+		List<LectureVO> list = service.getLectureTime(search2);
 		
 		String time = list.get(0).getLecture_time();
 		String[] time_frag = time.split("/");
@@ -34,7 +35,7 @@ public class LectureController {
 
 		}
 		
-		System.out.println(major+":"+ type+":" +search);
+		System.out.println(search);
 		
 		
 		mv.addObject("lecture", list);
