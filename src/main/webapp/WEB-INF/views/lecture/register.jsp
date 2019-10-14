@@ -17,26 +17,23 @@ $(document).ready(function(){
 <h1>Sugang ShinCheong</h1>
 <form action="lecture">
 	<select name="major">
-		<option value="EE"> 전자공학 </option>
-		<option value="CE"> 컴퓨터공학 </option>
-		<option value="LD"> 법학과 </option>
-		<option value="MD"> 경영학과 </option>
-		<option value="MAD"> 수학과 </option>
+		<option value="전자공학"> 전자공학 </option>
+		<option value="컴퓨터공학"> 컴퓨터공학 </option>
+		<option value="법학과"> 법학과 </option>
+		<option value="경영학과"> 경영학과 </option>
+		<option value="수학과"> 수학과 </option>
 	</select>
-		<select name="major">
-		<option value="EE"> 전자공학 </option>
-		<option value="CE"> 컴퓨터공학 </option>
-		<option value="LD"> 법학과 </option>
-		<option value="MD"> 경영학과 </option>
-		<option value="MAD"> 수학과 </option>
+	
+	<select name="type">
+		<option value="교양선택"> 교양선택 </option>
+		<option value="교양필수"> 교양필수 </option>
+		<option value="전공선택"> 전공선택 </option>
+		<option value="전공필수"> 전공필수 </option>
+		<option value="기초필수"> 기초필수 </option>
+		
 	</select>
-		<select name="major">
-		<option value="EE"> 전자공학 </option>
-		<option value="CE"> 컴퓨터공학 </option>
-		<option value="LD"> 법학과 </option>
-		<option value="MD"> 경영학과 </option>
-		<option value="MAD"> 수학과 </option>
-	</select>
+	
+	과목명: <textarea name="search" rows="1sp"></textarea>
 	
 	<br>
 	

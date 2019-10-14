@@ -91,8 +91,8 @@
 	</delete>
 
 
-	<select id="getlecturetime" resultType="lecture">
-	select * from lecture
+	<select id="getlecturetime" parameterType="String" resultType="lecture" >
+	select * from lecture where lecture_title like "%#{search}%"
 	</select>
 
 

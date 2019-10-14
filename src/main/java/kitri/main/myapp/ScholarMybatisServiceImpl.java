@@ -110,8 +110,8 @@ public class ScholarMybatisServiceImpl implements ScholarMybatisService {
 
 
 	@Override
-	public List<LectureVO> getLectureTime() {
-		return ldao.getLectureTime();
+	public List<LectureVO> getLectureTime(String search) {
+		return ldao.getLectureTime(search);
 	}
 
 

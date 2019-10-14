@@ -11,7 +11,7 @@ public class LectureDAO {
 	@Autowired
 	SqlSession session;
 	
-	public List<LectureVO> getLectureTime(){
-		return session.selectList("sch.getlecturetime");
+	public List<LectureVO> getLectureTime(String search){
+		return session.selectList("sch.getlecturetime", search);
 	}
 }

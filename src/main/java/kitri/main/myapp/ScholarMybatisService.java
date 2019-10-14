@@ -21,7 +21,7 @@ public interface ScholarMybatisService {
 	public void deleteRequestExtra(ExtraAdminVO vo);
 	
 
-	public List<LectureVO> getLectureTime();
+	public List<LectureVO> getLectureTime(String search);
 
 	public List<CalendarVO> getCalendarMonth(String month);
 	public List<UserInfoVO> getUserinfoList(); 
