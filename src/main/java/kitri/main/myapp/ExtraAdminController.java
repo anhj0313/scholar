@@ -65,9 +65,19 @@ public class ExtraAdminController {
 	public ModelAndView deleteRequestExtra(ExtraAdminVO vo) {
 		
 		ModelAndView mv = new ModelAndView();
+		UserInfoVO user = new UserInfoVO();
+		user.setUser_id(vo.getUser_id());
+		user.setPassword("0000");
+		
+		user = service.getUserinfo(user);
+
+
+		mv.addObject("userinfo", user);
+		
 		
 		service.deleteRequestExtra(vo);
-		
+
+		mv.addObject("requestlistextra", service.getMyRequestExtra(vo.getUser_id()));			
 		mv.setViewName("schoolextra/insertrequest(student)");
 		return mv;
 	}
@@ -88,10 +98,12 @@ public class ExtraAdminController {
 			service.updateuserextra(vo);
 			
 		}
+		//여기까진 실행된다.
 
-		service.updateaccept(vo);
-		
-		System.out.println("acceptupdate완료");
+	//System.out.println(vo.getRequest_id()+vo.getUser_id()+vo.getAccept());	
+    	service.updateaccept(vo);
+		//이게 문제
+
 		
 		mv.addObject("requestlistextra", service.getAllRequestExtra());
 		

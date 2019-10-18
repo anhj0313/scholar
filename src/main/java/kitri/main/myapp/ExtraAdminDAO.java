@@ -10,10 +10,7 @@ import org.springframework.stereotype.Repository;
 public class ExtraAdminDAO {
 	@Autowired
 	SqlSession session; // mybatis dbconnetion
-	public void updateaccept(ExtraAdminVO vo) {
-		
-		session.update("sch.updateaccept");
-	}
+
 
 	public void insertAdminExtra(ExtraAdminVO vo) {
 		session.insert("sch.insertrequestextra", vo);
@@ -42,6 +39,9 @@ public class ExtraAdminDAO {
 	public void updateuserextra(ExtraAdminVO vo) {
 		session.update("sch.updateuserextra", vo);
 	}
-	
-	
+
+	public void updateaccept(ExtraAdminVO vo) {
+		
+		session.update("sch.updateaccept",vo);
+	}
 }

@@ -33,7 +33,7 @@
 		<form action="deleterequestextra">
 			${vo } <input type="submit" value="취소">
 			<input type="hidden" name="user_id" value=${vo.user_id }>
-			<input type="hidden" name="reportingdate" value=${vo.reportingdate }>
+			<input type="hidden" name="request_id" value=${vo.request_id }>
 
 		</form>
 
@@ -50,14 +50,14 @@
 		<option>부전공신청</option>
 		<option>복수전공신청</option>
 		</select>	
-	
+	<hr>
 		전공선택: <select name="major">
 		<option value="">선택안함</option>
 		<option>컴퓨터공학과</option>
 		<option>정보통신 공학과</option>
 		<option>전자공학과</option>
 		</select>
-	
+	<hr>
         복수,부전공 선택: <select  name="extra_major">
         <option value="">선택안함</option>
 		<option>컴퓨터공학과</option>
@@ -65,7 +65,7 @@
 		<option>전자공학과</option>
 			</select>
 	
-			
+	<hr>
 		</select> 신청일시:
 		<textarea rows="1" cols="20" readonly="readonly">  </textarea>
 	   <br> 신청 메모:

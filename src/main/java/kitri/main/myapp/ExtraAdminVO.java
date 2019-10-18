@@ -63,7 +63,7 @@ public class ExtraAdminVO {
 	@Override
 	public String toString() {
 		return "ExtraAdminVO [user_id=" + user_id + " major= "+major+", extra_major=" + extra_major + ", reportingdate=" + reportingdate
-				+ ", memo=" + memo + ", type="+type+"]";
+				+ ", memo=" + memo + ", type="+type+", requestid="+request_id+"]";
 	}
 	
 	

@@ -68,9 +68,11 @@
 	<update id="updateaccept" parameterType="extrarequest">
 		update extra_major_admin
 		set 
-		accept=0
+		accept = 0
 		where user_id = #{user_id} and request_id=#{request_id}
 	</update>
+	
+	
 	<insert id="insertrequestextra" parameterType="extrarequest">
 		insert into
 		extra_major_admin values(#{user_id}, #{extra_major}, sysdate,

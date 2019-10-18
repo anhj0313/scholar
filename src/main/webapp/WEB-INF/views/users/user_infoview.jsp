@@ -17,7 +17,7 @@
 
 
 
-
+<hr>
 <form action="changePassword">
 
 
@@ -26,7 +26,7 @@
 <input type="submit" value="수정하기">
 
 </form>
-  
+  <hr>
   <form action="insertrequest">
 
 
